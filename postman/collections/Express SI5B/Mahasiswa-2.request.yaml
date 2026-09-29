@@ -1,0 +1,5 @@
+$kind: http-request
+name: Mahasiswa
+url: ""
+method: GET
+order: 4251724196750256
