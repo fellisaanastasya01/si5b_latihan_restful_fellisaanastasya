@@ -1,0 +1,9 @@
+$kind: http-request
+url: "{{base_url}}/prodi"
+method: POST
+headers:
+  x-api-key: "{{api_key}}"
+body:
+  type: json
+  content: '{"kode": "IF", "nama": "Informatika"}'
+order: 1000

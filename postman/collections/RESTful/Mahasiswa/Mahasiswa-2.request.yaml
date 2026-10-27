@@ -1,0 +1,16 @@
+$kind: http-request
+name: Mahasiswa
+url: http://localhost:3000/mahasiswa/5
+method: DELETE
+body:
+  type: json
+  content: "{\r
+
+    \    \"id\": 5,\r
+
+    \    \"nama\": \"Citra\",\r
+
+    \    \"jurusan\": \"Sistem Informasi\"\r
+
+    }"
+order: 4386607137730833

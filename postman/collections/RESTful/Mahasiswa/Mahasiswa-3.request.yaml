@@ -1,0 +1,10 @@
+$kind: http-request
+name: Mahasiswa
+url: http://localhost:3000/mahasiswa
+method: POST
+body:
+  type: json
+  content: "{ \"nama\": \"Citra\", \r
+
+    \"jurusan\": \"Sistem Informasi\" } "
+order: 4487113664129762

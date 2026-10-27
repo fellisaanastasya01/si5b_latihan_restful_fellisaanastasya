@@ -1,0 +1,47 @@
+$kind: http-request
+url: "{{base_url}}/mahasiswa"
+method: POST
+headers:
+  x-api-key: "{{api_key}}"
+body:
+  type: json
+  content: "{\r
+
+    \  \"nama\": \"Andi Pratama\",\r
+
+    \  \"nim\": \"2301001\",\r
+
+    \  \"alamat\": { \"jalan\": \"Jl. Rajawali No. 5\", \"kota\": \"Palembang\" },\r
+
+    \  \"prodiId\": \"6ad99e89509cfd9d1161684b\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "pm.test('Status code adalah 201', function () {\r
+
+      \  pm.response.to.have.status(201);\r
+
+      });\r
+
+      \r
+
+      pm.test('Data baru memiliki id dan nama sesuai kiriman', function () {\r
+
+      \  const jsonData = pm.response.json();\r
+
+      \  pm.expect(jsonData).to.have.property('id');\r
+
+      \  pm.expect(jsonData.nama).to.eql('Citra');\r
+
+      });\r
+
+      \r
+
+      if (pm.response.code === 201) {\r
+
+      \  pm.environment.set('mahasiswaId', pm.response.json().id);\r
+
+      }"
+    language: text/javascript
+order: 592732513682698
